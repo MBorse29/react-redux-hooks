@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import configureStore from "./store";
-import Simple from "./components/Simple";
-// import Counter from "./components/Counter";
-// import Field from "./components/Field";
-// import Form from "./components/Form";
+import Simple from "./components/Hooks/Simple";
+// import Counter from "./components/Hooks/Counter";
+// import Field from "./components/Hooks/Field";
+// import Form from "./components/Hooks/Form";
 
 const store = configureStore();
 

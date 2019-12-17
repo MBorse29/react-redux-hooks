@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateField } from "../reducersAndActions";
+import { updateField } from "../../reducersAndActions";
 
 const Field = () => {
   const { field } = useSelector(state => ({

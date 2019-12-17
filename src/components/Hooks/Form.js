@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateForm } from "../reducersAndActions";
+import { updateForm } from "../../reducersAndActions";
 
 const Form = () => {
   const { form } = useSelector(state => ({
