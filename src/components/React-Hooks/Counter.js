@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increaseCount } from "../../reducersAndActions";
 
@@ -7,7 +7,7 @@ const Counter = () => {
     ...state.reducer
   }));
   const dispatch = useDispatch();
-  const increase = () => dispatch(increaseCount());
+  const increase = useCallback(() => dispatch(increaseCount()), [dispatch]);
   return (
     <div>
       <h3>Counter</h3>

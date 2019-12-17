@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { simpleAction } from "../../reducersAndActions";
 
@@ -7,7 +7,7 @@ const Simple = () => {
     ...state.reducer
   }));
   const dispatch = useDispatch();
-  const swap = () => dispatch(simpleAction());
+  const swap = useCallback(() => dispatch(simpleAction()), [dispatch]);
   return (
     <div>
       <h3>Simple</h3>

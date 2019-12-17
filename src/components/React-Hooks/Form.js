@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateForm } from "../../reducersAndActions";
 
@@ -7,7 +7,7 @@ const Form = () => {
     ...state.reducer
   }));
   const dispatch = useDispatch();
-  const change = e => dispatch(updateForm(e));
+  const change = useCallback(e => dispatch(updateForm(e)), [dispatch]);
   return (
     <div>
       <h3>Form</h3>

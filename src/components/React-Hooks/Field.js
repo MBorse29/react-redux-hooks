@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateField } from "../../reducersAndActions";
 
@@ -7,7 +7,9 @@ const Field = () => {
     ...state.reducer
   }));
   const dispatch = useDispatch();
-  const change = e => dispatch(updateField(e.target.value));
+  const change = useCallback(e => dispatch(updateField(e.target.value)), [
+    dispatch
+  ]);
   return (
     <div>
       <h3>Field</h3>
