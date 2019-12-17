@@ -1,13 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { updateField } from "../../reducersAndActions";
 
-const Field = () => {
-  const { field } = useSelector(state => ({
-    ...state.reducer
-  }));
-  const dispatch = useDispatch();
-  const change = e => dispatch(updateField(e.target.value));
+const Field = ({ updateField, field }) => {
+  const change = e => updateField(e.target.value);
   return (
     <div>
       <h3>Field</h3>
@@ -19,4 +15,7 @@ const Field = () => {
   );
 };
 
-export default Field;
+export default connect(
+  state => ({ field: state.reducer.field }),
+  { updateField }
+)(Field);
